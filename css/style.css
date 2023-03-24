@@ -1,0 +1,140 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+main
+{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background: rgb(132, 136, 132, 0.3);
+}
+
+header 
+{
+    width: 100%;
+    border-bottom: 1px solid #000;
+}
+
+header h1 
+{
+    margin: 20px 0;
+    text-align: center;
+}
+
+.question-box
+{
+    position: relative;
+    margin-top: 80px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.question
+{
+    position: relative;
+    background: #28282B;
+    border-radius: 15px;
+    margin: 10px 0;
+    padding: 20px 10px;
+
+}
+
+.question span 
+{
+    font-weight: 600;
+    color: #fff;
+    
+}
+
+.arrow-btn
+{
+    border: 0;
+}
+
+.arrow-btn i 
+{
+    position: absolute;
+    top: 16px;
+    right: 0;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #fff;
+}
+
+.answer-box
+{
+    color: #fff;
+    position: absolute;
+    translate: 0 -20px;
+    visibility: hidden;
+    transition: all .3s linear;
+    margin: 20px 0 10px;
+    padding-top: 15px;
+    border-top: 1px solid #fff;
+}
+
+
+/*
+classe "question-visible" permite mostrar a resposta
+e trocar os icones dos botões
+*/
+
+.question-visible .answer-box
+{
+    position: static;
+    translate: 0 ;
+    visibility: visible;
+    transition: all .3s linear;
+}
+
+.bx-chevron-up 
+{
+    display: none;
+}
+.question-visible .bx-chevron-up 
+{
+    display: inline;
+}
+
+.question-visible .bx-chevron-down
+{
+    display: none;
+}
+
+/*
+    responsividade
+*/
+
+@media (max-width:678px) {
+    .question-box
+    {
+        width: 100%;
+        padding: 0 20px;
+        margin-top: 20px;
+    }
+
+    .question
+    {
+        padding-bottom: 0;
+    }
+
+    .question span 
+    {
+        display: block;
+        padding-right: 20px;
+    }
+
+    .answer-box
+    {
+        margin-top: 0;
+    }
+    
+}
